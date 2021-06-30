@@ -1,25 +1,62 @@
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg backgroundColor">
     <div class="container-fluid">
-      <a class="navbar-brand"  routerLink="">Navbar</a>
+      <a class="navbar-brand "  routerLink=""><img class="logo" src="https://images.pexels.com/photos/5474031/pexels-photo-5474031.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500.jpg" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon">X</span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto contentColor"  *ngFor='let hearder of hearders.homeheader'>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  routerLink="" routerLinkActive="active" >
+              <span> {{hearder.home}} </span>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page"  routerLink=""  >
-              <span>  </span>
+              <span> {{hearder.video}}  </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  routerLink=""  >
+              <span> {{hearder.blog}}  </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  routerLink=""  >
+              <span> {{hearder.contact}} </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="path"  >
+              <span> {{hearder.uploadImage}} </span>
             </a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+
+          <div class="p-fluid p-grid leftSide">
+            <div class="p-field p-col-12">
+              <span class="p-float-label p-input-icon-right">
+                <i class="pi pi-spin pi-spinner"></i>
+                <input
+                  type="text"
+                  id="inputtext-right"
+                  pInputText
+                  [(ngModel)]="valueIconRight"
+y                />
+                <label for="inputtext-right backColor"><span class="colorWhite"> Right Icon </span></label>
+              </span>
+            </div>
+          </div>
+          <div class="button">
+
+            <p-button label="Submit"></p-button>
+          </div>
+
       </div>
     </div>
   </nav>
 
 
 <router-outlet></router-outlet>
+<!-- <app-carousel></app-carousel> -->
